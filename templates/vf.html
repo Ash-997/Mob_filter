@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+   <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto ;
+  grid-gap: 1px;
+  background-color: #6299bc5c;
+  padding: 1px;
+  border: 2px solid #b1b9be;
+  margin-bottom: 33px;
+  align-content: space-evenly;
+
+}
+
+.grid-container > div {
+  background-color: rgb(255 255 255 / 96%);;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-row: 1 / 4;
+}
+.item34 {
+  grid-column: 1 / 3;
+}
+.head{
+font-size: 22px;
+    font-family: system-ui;
+}
+.hlo{
+font-size: 22px;
+    font-family: system-ui;
+    grid-column: 1 / 3;
+
+}
+.outer{
+display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto ;
+
+}
+.full{
+background-color:#6299bc5c;
+
+
+}
+.mobhead{
+    background-color: #e40046;
+    margin-bottom: 30px;
+    margin-top: -21px;
+    height: 81px;
+    color: white;
+    display: flex;
+    justify-content: center;
+                }
+</style>
+</head>
+<body class="full">
+
+<div class="mobhead">
+<h1>Mobiles</h1>
+</div>
+
+
+<div class="outer">
+{% for pro in pros %}
+
+<div class="grid-container">
+
+
+    <div class="item1">
+<img src="{{pro.image.url}}" alt="connect" style="max-height:200px">
+    </div>
+
+    <div class="item4">
+    <span class="head">{{pro.phonemod }}</span>
+
+        </div>
+
+
+
+     <div class="item2" style="size: 30px">
+    <span class="head">Ram - </span>
+    {% if pro.ram.id == 1 %}
+    <span class="head">4GB</span>
+    {% endif %}
+    {% if pro.ram.id == 2 %}
+    <span class="head">8GB</span>
+    {% endif %}
+    {% if pro.ram.id == 3 %}
+    <span class="head">12GB</span>
+    {% endif %}
+         </div>
+
+   <div class="item3">
+       <span class="head">Memory - </span>
+    {% if pro.memory.id == 1 %}
+    <span class="head">32GB</span>
+    {% endif %}
+    {% if pro.memory.id == 2 %}
+    <span class="head">64GB</span>
+    {% endif %}
+    {% if pro.memory.id == 3 %}
+    <span class="head">128GB</span>
+    {% endif %}
+</div>
+
+
+      <div class="item34">
+       <span style="font-size:25px;">Price - ₹{{ pro.price}} </span>
+
+      </div>
+
+
+</div>
+
+<br>
+{%empty%}
+    <h1>No Mobiles in this range</h1>
+
+{% endfor %}
+    </div>
+
+
+</body>
+</html>

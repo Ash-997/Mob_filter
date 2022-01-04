@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+       .largerCheck {
+            width: 62px;
+            height: 22px;
+        }
+        .head{
+        background-color: #e40046;
+    margin-bottom: 0px;
+    margin-top: -21px;
+    height: 81px;
+    color: white;
+    dispaly: flex;
+    display: flex;
+    justify-content: center;
+    align-content: center
+
+
+
+        }
+
+.btn{
+
+background-color: #e40046;
+    width: 19%;
+    height: 48px;
+    margin-top: 20;
+    margin-top: 0px;
+    color: white;
+    font-size: 25px;
+    border-radius: 35px;
+    margin-top: 5px;
+
+}
+</style>
+
+
+
+
+</head>
+<body>
+
+<div class="head">
+<h1>Search Mobile here</h1>
+    </div>
+
+<form method="get" action="/goom">
+<div style="display:flex; justify-content: space-around; background-color:#f9f9f9; padding: 28px; border: 0.5px solid;" >
+
+    <div>
+    <h2>By Brand →</h2>
+        {% for brand in brands %}
+    <input  class="largerCheck" type="checkbox" value="{{brand.id}}" name="{{ brand.brand }}"><span style="font-size:25px;">{{brand.brand }}</span><br>
+    {% endfor %}
+    </div>
+
+
+
+    <div>
+    <h3>By Ram</h3>
+        {% for ram in rams %}
+    <input type="checkbox" name="{{ ram.ram }}" value={{ram.id}} class="largerCheck"><span style="font-size:25px">{{ ram.ram }}</span><br>
+    {% endfor %}
+
+    </div>
+
+
+
+    <div>
+    <h3>By Memory</h3>
+            {% for memo in memos %}
+    <input type="checkbox" name="{{ memo.memory }}" class="largerCheck" value={{memo.id}}><span style="font-size:25px">{{ memo.memory}}</span><br>
+    {% endfor %}
+    </div>
+
+ <div>
+    <h3>By Memory</h3>
+            {% for pcat in pcats %}
+    <input type="checkbox" name="{{ pcat.pricecat }}" class="largerCheck" value={{pcat.id}}><span style="font-size:25px;" >{{ pcat.pricecat}}</span><br>
+    {% endfor %}
+    </div>
+
+
+
+
+
+</div>
+
+
+    <div style="display:flex; justify-content:center">
+    <input  class="btn" type="submit" value="Submit">
+        </div>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
