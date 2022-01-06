@@ -228,7 +228,6 @@ def gta(request):
 
 
         elif chargb or aathggb or baragb:
-            print("kabab me haaddi")
             if not fil_prod:
                 context = {"pros": final}
 
